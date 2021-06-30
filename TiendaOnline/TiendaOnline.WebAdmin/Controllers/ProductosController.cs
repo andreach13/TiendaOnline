@@ -16,7 +16,7 @@ namespace TiendaOnline.WebAdmin.Controllers
             _productosBL = new ProductosBL();
 
         }
-        // GET: Productos
+        // GET: Productos --- recuperan datos-DA LA PAGINA
         public ActionResult Index()
         {
             var ListadeProductos = _productosBL.ObtenerProductos();
@@ -46,11 +46,11 @@ namespace TiendaOnline.WebAdmin.Controllers
             return View(producto);
         }
 
-        [HttpPost]
+        [HttpPost]//envia datos al servidor
         public ActionResult Editar(Producto producto)
         {
             _productosBL.GuardarProducto(producto);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index"); //una vez que se guarde se va a retornar
         }
 
         public ActionResult Detalle(int id)
