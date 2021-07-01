@@ -35,9 +35,19 @@ namespace TiendaOnline.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Crear(Categoria categoria)
         {
-            _categoriasBL.GuardarCategoria(categoria);
+            if (ModelState.IsValid)
+            {
+                if (categoria.Descripcion != categoria.Descripcion.Trim()) //trim quita los espacio al inciio y final de lo que se escriba
+                {
+                    //error personalizado, agregue un error al modelo, especifico la propiedad y el mensaje
+                    ModelState.AddModelError("Descripcion", "La Descripcion no debe iniciar ni finalizar con espacios ");
+                    return View(categoria);
+                }
+                _categoriasBL.GuardarCategoria(categoria);
+                return RedirectToAction("Index");
+            }
 
-            return RedirectToAction("Index");
+            return View(categoria);
         }
 
         public ActionResult Editar(int id)
@@ -49,8 +59,19 @@ namespace TiendaOnline.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Editar(Categoria categoria)
         {
-            _categoriasBL.GuardarCategoria(categoria);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                if (categoria.Descripcion != categoria.Descripcion.Trim()) //trim quita los espacio al inciio y final de lo que se escriba
+                {
+                    //error personalizado, agregue un error al modelo, especifico la propiedad y el mensaje
+                    ModelState.AddModelError("Descripcion", "La Descripcion no debe iniciar ni finalizar con espacios ");
+                    return View(categoria);
+                }
+                _categoriasBL.GuardarCategoria(categoria);
+                return RedirectToAction("Index");
+            }
+
+            return View(categoria);
         }
 
         public ActionResult Detalle(int id)

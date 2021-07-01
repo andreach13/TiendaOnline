@@ -19,7 +19,7 @@ namespace TiendaOnline.BL
 
         public List<Producto> ObtenerProductos()
         {
-            ListadeProductos = _contexto.Productos.ToList();
+            ListadeProductos = _contexto.Productos.Include("Categoria").ToList();
             return ListadeProductos;
         }
 
@@ -39,9 +39,20 @@ namespace TiendaOnline.BL
 
         public Producto ObtenerProducto(int id)
         {
-            var producto = _contexto.Productos.Find(id);
+            var producto = _contexto.Productos.Include("Categoria").FirstOrDefault(p => p.Id == id);
             return producto;
         }
+
+        //public List<Producto> ObtenerProductosActivos()
+        //{
+            //ListadeProductos = _contexto.Productos
+                //.Include(" Categoria ")
+                //.Where(r => r.Activo == true)
+                //.OrderBy(r => r.Descripcion)
+                //.ToList();
+
+            //return ListadeProductos;
+        //}
 
         public void EliminarProducto(int id)
         {

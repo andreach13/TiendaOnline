@@ -10,10 +10,12 @@ namespace TiendaOnline.WebAdmin.Controllers
     public class ProductosController : Controller
     {
         ProductosBL _productosBL;
+        CategoriasBL _categoriasBL;
 
         public ProductosController()
         {
             _productosBL = new ProductosBL();
+            _categoriasBL = new CategoriasBL();
 
         }
         // GET: Productos --- recuperan datos-DA LA PAGINA
@@ -28,6 +30,9 @@ namespace TiendaOnline.WebAdmin.Controllers
         public ActionResult Crear()
         {
             var nuevoProducto = new Producto();
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
 
             return View(nuevoProducto);
         }
@@ -35,33 +40,74 @@ namespace TiendaOnline.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Crear(Producto producto)
         {
-            _productosBL.GuardarProducto(producto);
+            if (ModelState.IsValid)
+            {
+                if (producto.CategoriaId == 0)
+                {
+                    ModelState.AddModelError("CategoriaId", "Seleccione una categoria");
+                    return View(producto);
+                }
+                _productosBL.GuardarProducto(producto);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
+            return View(producto);
+            
         }
 
         public ActionResult Editar(int id)
         {
             var producto =_productosBL.ObtenerProducto(id);
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion", producto.CategoriaId);
+
             return View(producto);
         }
 
         [HttpPost]//envia datos al servidor
         public ActionResult Editar(Producto producto)
         {
-            _productosBL.GuardarProducto(producto);
-            return RedirectToAction("Index"); //una vez que se guarde se va a retornar
+            if (ModelState.IsValid)
+            {
+                if (producto.CategoriaId == 0)
+                {
+                    ModelState.AddModelError("CategoriaId", "Seleccione una categoria");
+                    return View(producto);
+                }
+                _productosBL.GuardarProducto(producto);
+
+                return RedirectToAction("Index");//una vez que se guarde se va a retornar
+            }
+
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion");
+            return View(producto);            
         }
+
 
         public ActionResult Detalle(int id)
         {
             var producto = _productosBL.ObtenerProducto(id);
+            //var categorias = _categoriasBL.ObtenerCategorias();
+
+            //ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion", producto.CategoriaId);
+
             return View(producto);
         }
 
         public ActionResult Eliminar(int id)
         {
             var producto = _productosBL.ObtenerProducto(id);
+            //var categorias = _categoriasBL.ObtenerCategorias();
+
+            //ViewBag.CategoriaId = new SelectList(categorias, "Id", "Descripcion", producto.CategoriaId);
+
             return View(producto);
         }
 
