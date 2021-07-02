@@ -15,6 +15,7 @@ namespace TiendaOnline.BL
         }
         public int Id { get; set; }
 
+        [Display(Name = "Descripcion")]
         [Required(ErrorMessage = "Ingrese descripcion del producto")]
         [MinLength (3,ErrorMessage = "Ingrese minimo 3 caracteres" )]
         [MaxLength(20, ErrorMessage = "Ingrese un maximo de 20 caracteres")]
@@ -26,6 +27,10 @@ namespace TiendaOnline.BL
 
         public Categoria Categoria { get; set; }
         public int CategoriaId { get; set; }
+
+        [Display(Name = "Imagen")]
+        public string UrlImagen { get; set; }
+
         public bool Activo { get; set; }
     }
 }
