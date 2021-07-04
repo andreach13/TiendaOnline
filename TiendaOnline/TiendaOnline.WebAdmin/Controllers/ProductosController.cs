@@ -76,7 +76,7 @@ namespace TiendaOnline.WebAdmin.Controllers
         }
 
         [HttpPost]//envia datos al servidor
-        public ActionResult Editar(Producto producto)
+        public ActionResult Editar(Producto producto, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
@@ -85,10 +85,18 @@ namespace TiendaOnline.WebAdmin.Controllers
                     ModelState.AddModelError("CategoriaId", "Seleccione una categoria");
                     return View(producto);
                 }
+
+                if (imagen != null)
+                {
+                    producto.UrlImagen = GuardarImagen(imagen);
+                }
+
+
                 _productosBL.GuardarProducto(producto);
 
                 return RedirectToAction("Index");//una vez que se guarde se va a retornar
             }
+
 
             var categorias = _categoriasBL.ObtenerCategorias();
 
