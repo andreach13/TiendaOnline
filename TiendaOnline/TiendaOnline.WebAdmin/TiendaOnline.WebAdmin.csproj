@@ -150,7 +150,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrdenesController.cs" />
+    <Compile Include="Controllers\OrdenesDetalleController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,6 +182,20 @@
     <Content Include="Views\Categorias\Eliminar.cshtml" />
     <Content Include="Views\Categorias\Detalle.cshtml" />
     <Content Include="Views\Categorias\Index.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Usuarios\Crear.cshtml" />
+    <Content Include="Views\Usuarios\Editar.cshtml" />
+    <Content Include="Views\Usuarios\Detalle.cshtml" />
+    <Content Include="Views\Usuarios\Eliminar.cshtml" />
+    <Content Include="Views\Ordenes\Index.cshtml" />
+    <Content Include="Views\Ordenes\Crear.cshtml" />
+    <Content Include="Views\Ordenes\Editar.cshtml" />
+    <Content Include="Views\Ordenes\Detalle.cshtml" />
+    <Content Include="Views\OrdenDetalle\Index.cshtml" />
+    <Content Include="Views\OrdenDetalle\Crear.cshtml">
+      <BrowseToURL>~/OrdenDetalle/Crear</BrowseToURL>
+    </Content>
+    <Content Include="Views\OrdenDetalle\Eliminar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
