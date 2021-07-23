@@ -21,5 +21,10 @@ namespace TiendaOnline.Win
 
             listadeProductosBindingSource1.DataSource = ListadeProductos;
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

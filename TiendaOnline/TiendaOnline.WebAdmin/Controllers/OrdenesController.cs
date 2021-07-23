@@ -28,7 +28,7 @@ namespace TiendaOnline.WebAdmin.Controllers
         public ActionResult Crear()
         {
             var nuevaOrden = new Orden();
-            var usuarios = _usuariosBL.ObtenerUsuarios();
+            var usuarios = _usuariosBL.ObtenerUsuariosActivos();
 
             ViewBag.UsuarioId = new SelectList(usuarios, "Id", "Nombre");
 
@@ -50,7 +50,7 @@ namespace TiendaOnline.WebAdmin.Controllers
                 return RedirectToAction("Index");
             }
 
-            var usuarios = _usuariosBL.ObtenerUsuarios();
+            var usuarios = _usuariosBL.ObtenerUsuariosActivos();
             ViewBag.UsuarioId = new SelectList(usuarios, "Id ", "Nombre");
 
             return View(orden);
