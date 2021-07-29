@@ -1,7 +1,390 @@
-﻿
+﻿@model  List<TiendaOnline.BL.Producto>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio";
 }
 
-<h2>Bienvenidos a MAD's Store</h2>
+<h2>Bienvenidos</h2>
+<!-- HEADER -->
+<header>
+    <!-- TOP HEADER -->
+    <div id="top-header">
+        <div class="container">
+            <ul class="header-links pull-left">
+                <li><a href="#"><i class="fa fa-phone"></i> +504 2580-9030</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i> madstore@gmail.com</a></li>
+                <li><a href="#"><i class="fa fa-map-marker"></i> San Pedro Sula, Cortes</a></li>
+            </ul>
+            <ul class="header-links pull-right">
+                <li><a href="#"><i class="fa fa-cc-discover"></i> Lempiras</a></li>
+                <li><a href="#"><i class="fa fa-user-o"></i> Mi cuenta</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- /TOP HEADER -->
+    <!-- MAIN HEADER -->
+    <div id="header">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!--ROW SON FILAS-->
+                <!-- LOGO -->
+                <div class="col-md-3">
+                    <!--COL SON COLUMNAS-->
+                    <div class="header-mad">
+                        <a href="#" class="mad">
+                            <img src="./img/mss.png" alt="" style="width:250px; height:inherit">
+                        </a>
+                    </div>
+                </div>
+                <!-- /LOGO -->
+                <!-- SEARCH BAR -->
+                <div class="col-md-6">
+                    <div class="header-search">
+                        <form>
+                            <select class="input-select">
+                                <option value="0">Categorias</option>
+                                <option value="1">Ropa Casual</option>
+                                <option value="2">Accesorios</option>
+                                <option value="3">Vestidos</option>
+                                <option value="4">Trajes de baño</option>
+                            </select>
+                            <input class="input" placeholder="Search here">
+                            <button class="search-btn">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /SEARCH BAR -->
+                <!-- ACCOUNT -->
+                <div class="col-md-3 clearfix">
+                    <div class="header-ctn">
+                        <!-- Wishlist -->
+                        <div>
+                            <a href="#">
+                                <i class="fa fa-heart-o"></i>
+                                <span>Lista de Deseos</span>
+                                <div class="qty">2</div>
+                            </a>
+                        </div>
+                        <!-- /Wishlist -->
+                        <!-- Cart -->
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>Su Carrito</span>
+                                <div class="qty">2</div>
+                            </a>
+                            <div class="cart-dropdown">
+                                <div class="cart-list">
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <img src="./img/accesorios.png" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-name"><a href="#">Set de Cadenas de Acero</a></h3>
+                                            <h4 class="product-price"><span class="qty">1x</span>L.295.00</h4>
+                                        </div>
+                                        <button class="delete"><i class="fa fa-close"></i></button>
+                                    </div>
+                                    <div class="product-widget">
+                                        <div class="product-img">
+                                            <img src="./img/monedero.jpg" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-name"><a href="#">Monedero Loki</a></h3>
+                                            <h4 class="product-price"><span class="qty">1x</span>L.699.00</h4>
+                                        </div>
+                                        <button class="delete"><i class="fa fa-close"></i></button>
+                                    </div>
+                                </div>
+                                <div class="cart-summary">
+                                    <small>1 Item(s) selected</small>
+                                    <h5>SUBTOTAL: L.994.00</h5>
+                                </div>
+                                <div class="cart-btns">
+                                    <a href="#">Ver Carrito</a>
+                                    <a href="#">Revisar  <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Cart -->
+                        <!-- Menu Toogle -->
+                        <div class="menu-toggle">
+                            <a href="#">
+                                <i class="fa fa-bars"></i>
+                                <span>Menu</span>
+                            </a>
+                        </div>
+                        <!-- /Menu Toogle -->
+                    </div>
+                </div>
+                <!-- /ACCOUNT -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- /MAIN HEADER -->
+</header>
 
+<!-- /HEADER -->
+<!-- NAVIGATION -->
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="#">Hot Deals</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Ropa Casual</a></li>
+                <li><a href="#">Trajes de Baño</a></li>
+                <li><a href="#">Accessories</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
+
+<!-- /SECTION -->
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- section title -->
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h3 class="title">Nuestros Productos</h3>
+                    <div class="section-nav">
+                        <ul class="section-tab-nav tab-nav">
+                            <li class="active"><a data-toggle="tab" href="#tab1">Vestidos</a></li>
+                            <li><a data-toggle="tab" href="#tab1">Accesorios</a></li>
+                            <li><a data-toggle="tab" href="#tab1">Ropa</a></li>
+                            <li><a data-toggle="tab" href="#tab1">Relojería</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /section title -->
+            <!-- Products tab & slick -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                            <div class="products-slick" data-nav="#slick-nav-1">
+                              @foreach (var producto in Model
+                                  .Where(r=> r.Categoria.Descripcion == "Vestidos")
+                                  .Take(1)
+                                  .OrderBy(r=> Guid.NewGuid()))                                  
+                              {
+                                  <!-- new guid representa un identificador unico -->
+
+                                  <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt="">
+                                        <div class="product-label">
+                                            <span class="sale">-15%</span>
+                                            <span class="new">Usado</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Vestidos</p>
+                                        <h3 class="product-name"><a href="#">@producto.Descripcion</a></h3>
+                                        <h4 class="product-price">L. @producto.Precio <del class="product-old-price">L.990.00</del></h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a lista de deseos</span></button>
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver Producto</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Añadir al Carrito</button>
+                                    </div>
+                                </div>
+                              }
+                                <!-- /product -->
+                                
+                                @foreach (var producto2 in Model
+                                    .Where(r => r.Categoria.Descripcion == "Accesorios")
+                                    .Take(1)
+                                    .OrderBy(r=> Guid.NewGuid())
+                                    )
+                                {
+                                <!-- product -->
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <img src="@(ViewBag.adminWebsiteUrl + producto2.UrlImagen)"  alt="" >
+                                            <div class="product-label">
+                                                <span class="new">NEW</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">Accesorios</p>
+                                            <h3 class="product-name"><a href="#">@producto2.Descripcion</a></h3>
+                                            <h4 class="product-price">L. @producto2.Precio </h4>
+                                            <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> 
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <!--ranking de estrellas-->
+                                            <div class="product-btns">
+                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a lista de deseos</span></button>
+                                                <!--button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></!--button>-->
+                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver Producto</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Añadir al Carrito</button>
+                                        </div>
+                                    </div>
+                                }
+                                <!-- /product -->
+
+                                @foreach (var producto3 in Model
+                                .Where(r => r.Categoria.Descripcion == "Jeans")
+                                .Take(1)
+                                .OrderBy(r=> Guid.NewGuid())
+                                )
+                                {
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="@(ViewBag.adminWebsiteUrl + producto3.UrlImagen)" alt="">
+                                        <div class="product-label">
+                                            <span class="new">NEW</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Jeans</p>
+                                        <h3 class="product-name"><a href="#">@producto3.Descripcion</a></h3>
+                                        <h4 class="product-price">L.@producto3.Precio </h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i> <!--ranking de estrellas-->
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a lista de deseos</span></button>
+                                            <!--button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></!--button>-->
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver productos</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Añadir al Carrito</button>
+                                    </div>
+                                </div>
+                                }
+                                <!-- /product -->
+
+                                @foreach (var producto4 in Model
+                                    .Where(r => r.Categoria.Descripcion == "Relojeria")
+                                    .Take(1)
+                                    .OrderBy(r => Guid.NewGuid())
+                                    )
+                                {
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="@(ViewBag.adminWebsiteUrl + producto4.UrlImagen)" alt="">
+                                        <div class="product-label">
+                                            <span class="new">NEW</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Reloj</p>
+                                        <h3 class="product-name"><a href="#">@producto4.Descripcion</a></h3>
+                                        <h4 class="product-price">L. @producto4.Precio</h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a lista de deseos</span></button>
+                                            <!--button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></!--button>-->
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver productos</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Añadir al Carrito</button>
+                                    </div>
+                                </div>
+                                }
+                                <!-- /product -->
+
+                                @foreach (var producto5 in Model
+                                    .Where(r => r.Categoria.Descripcion == "Ropa para Caballeros")
+                                    .Take(1)
+                                    .OrderBy(r => Guid.NewGuid())
+                                    )
+                                {
+                                <!-- product -->
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="@(ViewBag.adminWebsiteUrl + producto5.UrlImagen)" alt="">
+                                        <div class="product-label">
+                                            <span class="sale">-50%</span>
+                                            <span class="new">NEW</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">Camisas</p>
+                                        <h3 class="product-name"><a href="#">@producto5.Descripcion</a></h3>
+                                        <h4 class="product-price">L. @producto5.Precio <del class="product-old-price">L. 760.00</del></h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                            <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a lista de deseos</span></button>
+                                            <!--button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></!--button>-->
+                                            <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver productos</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Añadir al Carrito</button>
+                                    </div>
+                                </div>
+                                }
+                                <!-- /product -->                            
+
+                            </div>
+                            <div id="slick-nav-1" class="products-slick-nav"></div>
+                        </div>
+                        <!-- /tab -->
+                    </div>
+                </div>
+            </div>
+            <!-- Products tab & slick -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>

@@ -18,7 +18,7 @@ namespace TiendaOnline.BL
         [Display(Name = "Descripcion")]
         [Required(ErrorMessage = "Ingrese descripcion del producto")]
         [MinLength (3,ErrorMessage = "Ingrese minimo 3 caracteres" )]
-        [MaxLength(20, ErrorMessage = "Ingrese un maximo de 20 caracteres")]
+        [MaxLength(80, ErrorMessage = "Ingrese un maximo de 80 caracteres")]
         public String Descripcion { get; set; }
 
         [Required(ErrorMessage = "Ingrese el precio")]
