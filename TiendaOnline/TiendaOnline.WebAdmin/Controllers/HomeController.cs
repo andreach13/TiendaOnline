@@ -6,8 +6,10 @@ using System.Web.Mvc;
 
 namespace TiendaOnline.WebAdmin.Controllers
 {
+    [Authorize]//(Users = "Admin")]
     public class HomeController : Controller
     {
+
         // GET: Home
         public ActionResult Index()
         {

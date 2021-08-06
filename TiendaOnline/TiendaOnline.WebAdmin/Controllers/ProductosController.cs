@@ -7,6 +7,7 @@ using TiendaOnline.BL;
 
 namespace TiendaOnline.WebAdmin.Controllers
 {
+    [Authorize]//(Users = "Admin")]
     public class ProductosController : Controller
     {
         ProductosBL _productosBL;

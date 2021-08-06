@@ -18,6 +18,8 @@ namespace TiendaOnline.BL
         [Required(ErrorMessage = "Ingrese el nombre del Usuario")]
         [MinLength(3, ErrorMessage = "Ingrese mínimo 3 caracteres")]
         public string Nombre { get; set; }
+        public string Contrasena { get; set; }
+
 
         [Required(ErrorMessage = "Ingrese el telefono")]
         [MinLength(8, ErrorMessage = "El telefono debe ser de 8 digitos")]
