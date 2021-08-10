@@ -12,20 +12,11 @@ namespace TiendaOnline.BL
         protected override void Seed(Contexto contexto)
         {
             var nuevoUsuario = new Usuario();
-            nuevoUsuario.Nombre = "Mabel";
+            nuevoUsuario.Nombre = "admin";
             nuevoUsuario.Contrasena = Encriptar.CodificarContrasena("123");
             nuevoUsuario.Direccion = "Server";
-            nuevoUsuario.Telefono = "000000001";
+            nuevoUsuario.Telefono = "00000000";
 
-            nuevoUsuario.Nombre = "Andrea";
-            nuevoUsuario.Contrasena = Encriptar.CodificarContrasena("123");
-            nuevoUsuario.Direccion = "Server";
-            nuevoUsuario.Telefono = "000000002";
-
-            nuevoUsuario.Nombre = "Dany";
-            nuevoUsuario.Contrasena = Encriptar.CodificarContrasena("123");
-            nuevoUsuario.Direccion = "Server";
-            nuevoUsuario.Telefono = "00000003";
 
             contexto.Usuarios.Add(nuevoUsuario);
 

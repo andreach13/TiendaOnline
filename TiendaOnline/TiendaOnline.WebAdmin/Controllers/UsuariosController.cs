@@ -7,7 +7,7 @@ using TiendaOnline.BL;
 
 namespace TiendaOnline.WebAdmin.Controllers
 {
-    [Authorize]//(Users = "Admin")]
+    //(Users = "Admin")]
     public class UsuariosController : Controller
     {
         UsuariosBL _usuariosBL;
